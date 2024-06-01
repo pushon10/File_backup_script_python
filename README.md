@@ -89,5 +89,43 @@ Scheduled backups are set to run daily at 2:00 AM by default. You can customize 
 This project is licensed under the MIT License - see the LICENSE file for details.
 ```
 
+## Test Cases for Backup Script (Tested on 01/06/2024)
+
+### 1. test_successful_backup
+- **Description**: Test successful backup of files.
+- **Input**: Valid source and backup folder paths.
+- **Expected Result**: All files from the source folder should be copied to the backup folder.
+- **Actual Result**: All files from the source folder copied to the backup folder.
+
+### 2. test_backup_with_extensions
+- **Description**: Test backup of files with specific extensions.
+- **Input**: Valid source and backup folder paths with specified extensions (e.g., `.txt`, `.jpg`).
+- **Expected Result**: Only files with the specified extensions should be copied to the backup folder.
+- **Actual Result**: Only files with the specified extensions copied to the backup folder.
+
+### 3. test_source_folder_not_exist
+- **Description**: Test backup when the source folder does not exist.
+- **Input**: Non-existent source folder path.
+- **Expected Result**: Raises `FileNotFoundError`.
+- **Actual Result**: Raises `FileNotFoundError`.
+
+### 4. test_backup_folder_creation
+- **Description**: Test backup when the backup folder does not exist (should create the folder).
+- **Input**: Valid source folder path and a non-existent backup folder path.
+- **Expected Result**: The backup folder should be created, and files should be copied.
+- **Actual Result**: The backup folder is created, and files are copied.
+
+### 5. test_backup_with_no_extensions
+- **Description**: Test backup with no file extensions specified.
+- **Input**: Valid source and backup folder paths.
+- **Expected Result**: All files from the source folder should be copied to the backup folder.
+- **Actual Result**: All files from the source folder copied to the backup folder.
+
+### 6. test_backup_with_empty_source_folder
+- **Description**: Test backup with an empty source folder.
+- **Input**: Empty source folder path and a valid backup folder path.
+- **Expected Result**: The backup folder should be created, but no files should be copied.
+- **Actual Result**: The backup folder is created, but no files should be copied.
+
 
 
